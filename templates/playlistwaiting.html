@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% include 'navbar.html' %}
+
+
+{% block content %}
+<!DOCTYPE html>
+
+<html>
+<p>
+    {% for id in data %}
+    <iframe src={{id}} width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    {% endfor %}
+</p>
+</html>
+{% endblock content%}

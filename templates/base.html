@@ -1,0 +1,64 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Indie-Inator</title>
+          <style>
+            .img-container {
+              text-align: center;
+            }
+            h1 {
+              text-align: center;
+              font-family: Georgia;
+            }
+            p {
+              text-align: center;
+              font-family: Georgia;
+            }
+            .button {
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+          }
+           .button1 {
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+          }
+
+           .button1:hover {
+            background-color: #4CAF50;
+            color: white;
+          }
+
+          .rectangle {
+            height: 50px;
+            width: 300px;
+            border-radius: 20%;
+          }
+          .divspacing {
+            padding: 25px;
+          }
+          </style>
+    </head>
+    <body>
+        {% include 'navbar.html' %}
+
+
+        <div class="img-container" style = "padding-top: 25px">
+
+          <img src="{% static 'spotify.png' %}" alt="Spotify " style="height:100px;" >
+        </div>
+
+        {% block content %}
+            replace me
+        {% endblock %}
+    </body>
+</html>

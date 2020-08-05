@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% include 'navbar.html' %}
+
+
+{% block content %}
+<!DOCTYPE html>
+
+<html>
+<h1> Here are your songs you worked so hard to find!</h1>
+<p>Because I don't have your login, I can't add it directly to your playlist, but you can click on the Spotify Icon by each song and add it once the app opens.</p><br>
+<p>Some of these songs will definitely be a miss because less popular songs can suck sometimes</p><br>
+<h1> Consider Donating if the app was helpful! </h1>
+<p>I'm a rising senior in high school and I really want to afford a new headset so I can grind out new projects! Consider donating one or two dollars, every dollar is appreciated! <br>
+I'm looking to make a drop bot soon and a Quizlet Search Bot (useful on schoolwork, definitely not tests ;) )
+</p>
+<p> Venmo: </p>
+
+<p>
+    {% for id in data %}
+    <iframe src={{id}} width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    {% endfor %}
+</p>
+</html>
+
+{% endblock content %}

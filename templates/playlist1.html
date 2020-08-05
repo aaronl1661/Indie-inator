@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% include 'navbar.html' %}
+
+
+{% block content %}
+<!DOCTYPE html>
+
+<html>
+
+<h1 > Insert Username </h1>
+<p> There's no password needed! Use your login username. If it refreshes the page, your username is wrong</p>
+
+<div style="text-align: center">
+  <form action='.' method='POST'> {% csrf_token %}
+      {{ form.as_p }}
+      <button class="button button1 rectangle " onclick="document.location='/playlist2'" type="submit" >Next</button>
+  </form>
+</div>
+
+</html>
+
+{% endblock content %}

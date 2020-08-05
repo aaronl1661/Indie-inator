@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% include 'navbar.html' %}
+
+
+{% block content %}
+<!DOCTYPE html>
+
+<html>
+<h1 > Insert Song URI </h1>
+<h2 style="text-align: center">Directions:</h2>
+<p>
+    1. Right Click Song on Spotify app <br>
+    2. Click "Share" <br>
+    3. Click "Copy Spotify URI" <br>
+    4. Looks something like "spotify:track:4as4XEOR03oGm1STUKl6pa" <br>
+</p>
+<div style="text-align: center">
+        <form action='.' method='POST'> {% csrf_token %}
+            {{ form.as_p }}
+            <button class="button button1 rectangle " onclick="document.location='/playlist2'" type="submit" >Next</button>
+        </form>
+      </div>
+</html>
+
+{% endblock content %}
