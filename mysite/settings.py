@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = 'a-)_2x)k1g4pd4zaeok&nw9e7f5czjn9zd%_r04j@w&lo#f8@d'
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', a-)_2x)k1g4pd4zaeok&nw9e7f5czjn9zd%_r04j@w&lo#f8@d')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'a-)_2x)k1g4pd4zaeok&nw9e7f5czjn9zd%_r04j@w&lo#f8@d')
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
@@ -53,6 +53,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -130,7 +131,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
+# The absolute path to the directory where collectstatic will collect static files for deployment.
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),    
 )
@@ -144,3 +145,7 @@ CELERY_RESULT_SERIALIZER = 'json'
 #CELERY_TIMEZONE = 'Africa/Nairobi'
 
 
+# Heroku: Update database configuration from $DATABASE_URL.
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
