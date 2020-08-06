@@ -22,19 +22,31 @@
      
      </style>
 <html>
-  <h1 > Pick Genres</h1>
-    <p>Pick up to <b>5</b> genres you would want to explore / is the kind of songs you want to find</p>
-    <p>Categories in parenthesis are in the order of: Afro, Animation, Asian, Country, Dance, Electronic, Happy Vibey, Holidays, House, Indie, Instrumental,  Pop, Rap, Rock, Singer/SongWriter, Slow/Chill, Soundtrack, South American, World Music, 80s, Misc</p>
-        <div style="text-align:center" >
-                <form action='.' method='POST'> {% csrf_token %}
-                  <div class = checkboxes-label>
-                  {{ form.genre }}
-                  <span class='checkbox-custom'></span>
-                  <br>
-                  <p> It will take around 30 seconds to a minute to load the final page </p>
-                  <button class="button button1 rectangle " type='submit'>Next</button>
-                </form>
-
+  <h1 > Pick Genre Category</h1>
+  <p>Pick a genre category, and from there you will pick up to 5 genres</p>
+  
+  <div>
+    <div style="text-align: center;">
+      
+      <button class="button button1 rectangle " type='submit' onclick="window.location='/afrop/';">Afro</button>
+      <button class="button button1 rectangle " type='submit' onclick="window.location='/asianp/';">Asian</button>
+      <button class="button button1 rectangle " type='submit' onclick="window.location='/countryp/';">Country</button>
+      <button class="button button1 rectangle " type='submit'onclick="window.location='/dancep/';">Dance</button>
+      <button class="button button1 rectangle " type='submit'onclick="window.location='/electronicp/';">Electronic</button>
+      <button class="button button1 rectangle " type='submit'onclick="window.location='/happyp/';">happy</button>
+      <button class="button button1 rectangle " type='submit'onclick="window.location='/housep/';">House</button>
+      <button class="button button1 rectangle " type='submit'onclick="window.location='/indiep/';">Indie</button>
+      <button class="button button1 rectangle " type='submit'onclick="window.location='/instrumentalp/';">Instrumental</button>
+      <button class="button button1 rectangle " type='submit'onclick="window.location='/popp/';">Pop</button>
+      <button class="button button1 rectangle " type='submit'onclick="window.location='/rapp/';">Rap</button>
+      <button class="button button1 rectangle " type='submit'onclick="window.location='/rockp/';">Rock</button>
+      <button class="button button1 rectangle " type='submit'onclick="window.location='/slowp/';">Slow/Chill</button>
+      <button class="button button1 rectangle " type='submit'onclick="window.location='/soundtrackp/';">Soundtrack</button>
+      <button class="button button1 rectangle " type='submit'onclick="window.location='/southamericanp/';">South American</button>
+      <button class="button button1 rectangle " type='submit'onclick="window.location='/worldp/';">World Music</button>
+      <button class="button button1 rectangle " type='submit'onclick="window.location='/miscp/';">Misc.</button>
+    </div>
+  </div>
 </html>
 
 {% endblock content %}

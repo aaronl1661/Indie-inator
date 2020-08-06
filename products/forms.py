@@ -185,7 +185,7 @@ class MiscGenreForm(forms.Form):
 ("opera",   "opera(Misc)"),
 ("singer-songwriter",   "singer-songwriter(Misc)"),
 ("songwriter",  "songwriter(Misc)"),
-("synth-pop",   "synth-pop(Misc)")])
+("synth-pop",   "synth-pop(Misc)")])    
 
 class SongForm(forms.ModelForm):
     class Meta:
@@ -194,6 +194,10 @@ class SongForm(forms.ModelForm):
             'song', 
         ]
 class SongGenreForm(forms.Form):
+    genre = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices= [])
+
+   
+class SongAfroGenreForm(forms.Form):
     genre = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices= [("afrobeat",    "afrobeat (Afro)"),
 ("blues",   "blues(Afro)"),
 ("dancehall",   "dancehall(Afro)"),
@@ -201,9 +205,10 @@ class SongGenreForm(forms.Form):
 ("reggae",  "reggae(Afro)"),
 ("reggaeton",   "reggaeton(Afro)"),
 ("soul",    "soul(Afro)"),
-("ska", "ska(Afro)"),
-("disney",  "disney(Animation)"),
-("anime",   "anime(Asian)"),
+("ska", "ska(Afro)")
+])
+class SongAsianGenreForm(forms.Form):
+    genre = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices= [("anime",   "anime(Asian)"),
 ("cantopop",    "cantopop(Asian)"),
 ("indian",  "indian(Asian)"),
 ("j-dance", "j-dance(Asian)"),
@@ -213,17 +218,20 @@ class SongGenreForm(forms.Form):
 ("k-pop",   "k-pop(Asian)"),
 ("malay",   "malay(Asian)"),
 ("mandopop",    "mandopop(Asian)"),
-("philippines-opm", "philippines-opm(Asian)"),
-("bluegrass",   "bluegrass(Country)"),
+("philippines-opm", "philippines-opm(Asian)")])
+class SongCountryGenreForm(forms.Form):
+    genre = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices= [("bluegrass",   "bluegrass(Country)"),
 ("country", "country(Country)"),
 ("folk",    "folk(Country)"),
-("honky-tonk",  "honky-tonk(Country)"),
-("dance",   "dance(Dance)"),
+("honky-tonk",  "honky-tonk(Country)")])
+class SongDanceGenreForm(forms.Form):
+    genre = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices= [("dance",   "dance(Dance)"),
 ("disco",   "disco(Dance)"),
 ("groove",  "groove(Dance)"),
 ("salsa",   "salsa(Dance)"),
-("tango",   "tango(Dance)"),
-("detroit-techno",  "detroit-techno(Electronic Music) "),
+("tango",   "tango(Dance)")])
+class SongElectronicGenreForm(forms.Form):
+    genre = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices= [("detroit-techno",  "detroit-techno(Electronic Music) "),
 ("drum-and-bass",   "drum-and-bass(Electronic Music) "),
 ("dub", "dub(Electronic Music) "),
 ("dubstep", "dubstep(Electronic Music) "),
@@ -237,28 +245,35 @@ class SongGenreForm(forms.Form):
 ("minimal-techno",  "minimal-techno(Electronic Music) "),
 ("post-dubstep",    "post-dubstep(Electronic Music) "),
 ("techno",  "techno(Electronic Music) "),
-("trip-hop",    "trip-hop(Electronic Music) "),
-("road-trip",   "road-trip(Happy Vibey)"),
+("trip-hop",    "trip-hop(Electronic Music) ")])
+class SongHappyGenreForm(forms.Form):
+    genre = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices= [("road-trip",   "road-trip(Happy Vibey)"),
 ("summer",  "summer(Happy Vibey)"),
-("happy",   "happy(Happy Vibey)"),
-("holidays",    "holidays(Holidays)"),
-("house",   "house(House)"),
+("happy",   "happy(Happy Vibey)")])
+class SongHouseGenreForm(forms.Form):
+    genre = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices= [("house",   "house(House)"),
 ("garage",  "garage(House)"),
 ("breakbeat",   "breakbeat(House)"),
-("progressive-house",   "progressive-house(House)"),
-("indie",   "indie(Indie)"),
-("indie-pop",   "indie-pop(Indie)"),
-("ambient", "ambient(Instrumental)"),
+("progressive-house",   "progressive-house(House)")])
+class SongIndieGenreForm(forms.Form):
+    genre = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices= [("indie",   "indie(Indie)"),
+("indie-pop",   "indie-pop(Indie)")
+])
+class SongInstrumentalGenreForm(forms.Form):
+    genre = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices= [("ambient", "ambient(Instrumental)"),
 ("acoustic",   "acoustic(Instrumental)"),
 ("classical",   "classical(Instrumental)"),
 ("guitar",  "guitar(Instrumental)"),
-("romance", "romance(Instrumental)"),
-("power-pop",   "power-pop(Pop)"),
+("romance", "romance(Instrumental)")])
+class SongPopGenreForm(forms.Form):
+    genre = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices= [("power-pop",   "power-pop(Pop)"),
 ("pop", "pop(Pop)"),
 ("pop-film",    "pop-film(Pop)"),
-("party",   "party(Pop)"),
-("hip-hop", "hip-hop(Rap)"),
-("alt-rock",    "alt-rock(Rock)"),
+("party",   "party(Pop)")])
+class SongRapGenreForm(forms.Form):
+    genre = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices= [("hip-hop", "hip-hop(Rap)")])
+class SongRockGenreForm(forms.Form):
+    genre = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices= [("alt-rock",    "alt-rock(Rock)"),
 ("black-metal", "black-metal(Rock)"),
 ("death-metal", "death-meta(Rock)l"),
 ("emo", "emo(Rock)"),
@@ -277,10 +292,9 @@ class SongGenreForm(forms.Form):
 ("rock",    "rock(Rock)"),
 ("rockabilly",  "rockabilly(Rock)"),
 ("rock-n-roll", "rock-n-roll(Rock)"),
-("trance",  "trance(Rock)"),
-("singer-songwriter",   "singer-songwriter(Singer/Songwriter)"),
-("songwriter",  "songwriter(Singer/Songwriter)"),
-("alternative", "alternative(Slow/Chill)"),
+("trance",  "trance(Rock)")])
+class SongSlowGenreForm(forms.Form):
+    genre = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices= [("alternative", "alternative(Slow/Chill)"),
 ("chicago-house",   "chicago-house(Slow/Chill)"),
 ("club",    "club(Slow/Chill)"),
 ("chill",   "chill(Slow/Chill)"),
@@ -291,11 +305,14 @@ class SongGenreForm(forms.Form):
 ("r-n-b",   "r-n-b(Slow/Chill)"),
 ("sad", "sad(Slow/Chill)"),
 ("sleep",   "sleep(Slow/Chill)"),
-("study",   "study(Slow/Chill)"),
+("study",   "study(Slow/Chill)")])
+class SongSoundtrackGenreForm(forms.Form):
+    genre = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices= [("disney",  "disney(Soundtrack)"),
 ("movies",  "movies(Soundtrack)"),
 ("show-tunes",  "show-tunes(Soundtrack)"),
-("soundtracks", "soundtracks(Soundtrack)"),
-("bossanova",   "bossanova(South American)"),
+("soundtracks", "soundtracks(Soundtrack)")])
+class SongSouthAmericanGenreForm(forms.Form):
+    genre = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices= [("bossanova",   "bossanova(South American)"),
 ("brazil",  "brazil(South American)"),
 ("forro",   "forro(South American)"),
 ("latin",   "latin(South American)"),
@@ -304,21 +321,26 @@ class SongGenreForm(forms.Form):
 ("pagode",  "pagode(South American)"),
 ("samba",   "samba(South American)"),
 ("sertanejo",   "sertanejo(South American)"),
-("spanish", "spanish(South American)"),
-("british", "british(World Music)"),
+("spanish", "spanish(South American)")])
+class SongWorldGenreForm(forms.Form):
+    genre = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices= [("british", "british(World Music)"),
 ("french",  "french(World Music)"),
 ("german",  "german(World Music)"),
 ("iranian", "iranian(World Music)"),
 ("swedish", "swedish(World Music)"),
 ("turkish", "turkish(World Music)"),
-("world-music", "world-music(World Music)"),
-("synth-pop",   "synth-pop(80s)"),
-("children",    "children(Misc)"),
+("world-music", "world-music(World Music)")])
+class SongMiscGenreForm(forms.Form):
+    genre = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices= [("children",    "children(Misc)"),
 ("comedy",  "comedy(Misc)"),
 ("gospel",  "gospel(Misc)"),
+("holidays",    "holidays(Misc)"),
 ("new-release", "new-release(Misc)"),
-("opera",   "opera(Misc)")])
-   
+("opera",   "opera(Misc)"),
+("singer-songwriter",   "singer-songwriter(Misc)"),
+("songwriter",  "songwriter(Misc)"),
+("synth-pop",   "synth-pop(Misc)")])
+
 class RawProductForm(forms.Form):
     title = forms.CharField(widget=forms.TextInput(attrs={
                                                     "placeholder" : "Your Title"

@@ -19,7 +19,9 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from pages.views import home_view, contact_view, song1_view, song2_view, song3_view, song4_view, donate_view
 from products.views import product_create_view, username_view, playlist_view, genre_view, final_song_selection_view, song_view, song_confirm_view ,song_genre_view, song_rec_view, \
 afro_genre_view, asian_genre_view, country_genre_view, dance_genre_view, electronic_genre_view, happy_genre_view, house_genre_view, indie_genre_view, instrumental_genre_view, pop_genre_view,\
-rap_genre_view, rock_genre_view, slow_genre_view, soundtrack_genre_view, south_american_genre_view, world_genre_view, misc_genre_view
+rap_genre_view, rock_genre_view, slow_genre_view, soundtrack_genre_view, south_american_genre_view, world_genre_view, misc_genre_view, \
+song_afro_genre_view, song_asian_genre_view, song_country_genre_view, song_dance_genre_view, song_electronic_genre_view, song_happy_genre_view,  song_house_genre_view, song_indie_genre_view, song_instrumental_genre_view, song_pop_genre_view,\
+song_rap_genre_view, song_rock_genre_view, song_slow_genre_view, song_soundtrack_genre_view, song_south_american_genre_view, song_world_genre_view, song_misc_genre_view
 
 urlpatterns = [
     path('', home_view),
@@ -48,6 +50,23 @@ urlpatterns = [
     path('song1/', song_view),
     path('song2/', song_confirm_view),
     path('song3/', song_genre_view),
+    path('afros/', song_afro_genre_view),
+    path('asians/', song_asian_genre_view),
+    path('countrys/', song_country_genre_view),
+    path('dances/', song_dance_genre_view),
+    path('electronics/', song_electronic_genre_view),
+    path('happys/', song_happy_genre_view),
+    path('houses/', song_house_genre_view),
+    path('indies/', song_indie_genre_view),
+    path('instrumentals/', song_instrumental_genre_view),
+    path('pops/', song_pop_genre_view),
+    path('raps/', song_rap_genre_view),
+    path('rocks/', song_rock_genre_view),
+    path('slows/', song_slow_genre_view),
+    path('soundtracks/', song_soundtrack_genre_view),
+    path('south_americans/', song_south_american_genre_view),
+    path('worlds/', song_world_genre_view),
+    path('miscs/', song_misc_genre_view),
     path('song4/', song_rec_view),
     path('donate/', donate_view),
     path('contact/', contact_view),
