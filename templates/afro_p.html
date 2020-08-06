@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% include 'navbar.html' %}
+
+
+{% block content %}
+<!DOCTYPE html>
+
+<html>
+<style>
+   ul {
+      list-style-type:none;
+    }
+    .checkbox-label {
+    display: block;
+    position: relative;
+    margin: auto;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 24px;
+    height: 24px;
+    width: 24px;
+    clear: both;
+    }
+
+</style>
+<h1 > Pick Genres</h1>
+<p>Pick up to <b>5</b> genres you would want to explore / is the kind of songs you want to find</p>
+
+<div>
+  <div style="text-align: center;">
+    <div id="form1">
+      <form action='.' method='POST'> {% csrf_token %}
+        {% for genre in form.genre %}
+        <div class = checkboxes-label>
+          {{ genre }}
+        <span class='checkbox-custom'></span>
+        {% endfor %}
+        <br>
+        <p> It will take around 30 seconds to a minute to load the final page </p>
+        <button class="button button1 rectangle " type='submit' onclick="window.location='/playlist3/';">Back</button>
+        <button class="button button1 rectangle " type='submit'>Next</button>
+
+        </form>  
+    </div>
+  </div>
+</div>
+
+</div>
+</html>
+
+{% endblock content %}
