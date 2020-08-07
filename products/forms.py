@@ -37,8 +37,9 @@ class PlaylistForm(forms.Form):
         temp = sp.user_playlists(username)
         PLAYLIST_CHOICES = []
         for i in range(0, len(temp['items'])):
-            temp_tuple = (temp['items'][i]['id'], temp['items'][i]['name'])
-            PLAYLIST_CHOICES.append(temp_tuple)
+            if temp['items'][i]['tracks']['total'] >= 2:
+                temp_tuple = (temp['items'][i]['id'], temp['items'][i]['name'])
+                PLAYLIST_CHOICES.append(temp_tuple)
         self.fields['playlist'] = forms.ChoiceField(choices=PLAYLIST_CHOICES)
 class GenreForm(forms.Form):
     genre = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices= [("test" , 'test')
