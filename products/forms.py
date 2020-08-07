@@ -37,7 +37,7 @@ class PlaylistForm(forms.Form):
         temp = sp.user_playlists(username)
         PLAYLIST_CHOICES = []
         for i in range(0, len(temp['items'])):
-            if temp['items'][i]['tracks']['total'] >= 2:
+            if temp['items'][0]['tracks']['total'] != 0:
                 temp_tuple = (temp['items'][i]['id'], temp['items'][i]['name'])
                 PLAYLIST_CHOICES.append(temp_tuple)
         self.fields['playlist'] = forms.ChoiceField(choices=PLAYLIST_CHOICES)
