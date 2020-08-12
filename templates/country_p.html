@@ -23,6 +23,7 @@
     }
 
 </style>
+
 <h1 > Pick Genres</h1>
 <p>Pick up to <b>5</b> genres you would want to explore / is the kind of songs you want to find</p>
 
@@ -36,8 +37,8 @@
         <span class='checkbox-custom'></span>
         {% endfor %}
         <br>
-        <p> It will take around 30 seconds to a minute to load the final page </p>
-        <button class="button button1 rectangle " type='submit'>Next</button>
+        <p> It will take around 30 seconds to a minute to load the final page. If you're on mobile DO NOT leave the tab or switch apps </p>
+        <input id="nextButton" class="button button1 rectangle " type='submit' value="Next" onclick="updateButtonText()"></input>
         
         </form>  
     </div>
