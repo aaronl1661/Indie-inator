@@ -15,14 +15,18 @@ def get_id_list(playlist_id, sp):
     results = sp.playlist(playlist_id, fields="tracks, next")  
     tracks = results['tracks']
     id = []
-    for i, item in enumerate(tracks['items']):
+    for item in tracks['items']:
             track = item['track']
-            id.append(track['id'])
+            if track != None:
+                if track['id'] != None:
+                    id.append(track['id'])
     while tracks['next']:
         tracks = sp.next(tracks)
-        for i, item in enumerate(tracks['items']):
+        for item in tracks['items']:
             track = item['track']
-            id.append(track['id'])
+            if track != None:
+                if track['id'] != None:
+                    id.append(track['id'])
     return id
 
 def create_playlist(playlist_id, sp):
@@ -209,6 +213,7 @@ def get_final_songs(sp, df, result, final_genres): # result comes form get_centr
 
 def run(playlist_id, final_genres):
         sp = init_sp()
+        print("sp created")
         df = create_playlist_df(playlist_id)
         print(type(df))
         result = get_centroid(df)
@@ -219,5 +224,3 @@ def run(playlist_id, final_genres):
         for id in final_songs:
                 embedded_songs.append("https://open.spotify.com/embed/track/" + id)    
         return embedded_songs
-
-#print(run('spotify:playlist:4w1j2BzPxQu3Oe9cLhdu92', ['k-pop']))
