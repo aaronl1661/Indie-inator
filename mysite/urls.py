@@ -21,7 +21,8 @@ from products.views import product_create_view, username_view, playlist_view, ge
 afro_genre_view, asian_genre_view, country_genre_view, dance_genre_view, electronic_genre_view, happy_genre_view, house_genre_view, indie_genre_view, instrumental_genre_view, pop_genre_view,\
 rap_genre_view, rock_genre_view, slow_genre_view, soundtrack_genre_view, south_american_genre_view, world_genre_view, misc_genre_view, \
 song_afro_genre_view, song_asian_genre_view, song_country_genre_view, song_dance_genre_view, song_electronic_genre_view, song_happy_genre_view,  song_house_genre_view, song_indie_genre_view, song_instrumental_genre_view, song_pop_genre_view,\
-song_rap_genre_view, song_rock_genre_view, song_slow_genre_view, song_soundtrack_genre_view, song_south_american_genre_view, song_world_genre_view, song_misc_genre_view
+song_rap_genre_view, song_rock_genre_view, song_slow_genre_view, song_soundtrack_genre_view, song_south_american_genre_view, song_world_genre_view, song_misc_genre_view, \
+waiting_view
 
 urlpatterns = [
     path('', home_view),
@@ -46,6 +47,7 @@ urlpatterns = [
     path('south_americanp/', south_american_genre_view),
     path('worldp/', world_genre_view),
     path('miscp/', misc_genre_view),
+    path('waitingp/', waiting_view),
     path('playlist4/', final_song_selection_view),
     path('song1/', song_view),
     path('song2/', song_confirm_view),

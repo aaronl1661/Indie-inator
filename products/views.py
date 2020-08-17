@@ -7,10 +7,13 @@ from spotipy.oauth2 import SpotifyClientCredentials
 from . models import Product, Username, Playlist
 from django import forms
 import csv
-from scripts.script import run, init_sp, get_id_list,create_playlist,create_playlist_df, get_centroid, get_final_songs
+#from scripts.script import run, init_sp, get_id_list,create_playlist,create_playlist_df, get_centroid, get_final_songs
 import celery
 from django.contrib import messages
-
+from .tasks import run
+from time import sleep
+import json
+from celery.result import AsyncResult
 # Create your views here.
 
 def product_create_view(request):
@@ -93,12 +96,27 @@ def genre_view(request):
         }
     return render(request, "playlist3.html", context)
 
+def waiting_view(request):
+    playlist = request.session['playlist_choice']
+    genre = request.session['genre_choice']
+    async_result = run.delay(playlist, genre)
+    request.session['task_id'] = async_result.task_id
+    #return redirect('/playlist4/')
+    return render(request, 'playlistwaiting.html')
+
+
+def final_song_selection_view(request):
+
+    context = {'data' : AsyncResult(request.session['task_id']).get()}
+    return(render(request, 'playlist4.html', context))
+
+
 def afro_genre_view(request):
     form = AfroGenreForm()
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = AfroGenreForm()
     context = {
@@ -509,13 +527,6 @@ def song_misc_genre_view(request):
     return render(request, "misc_s.html", context)      
 
 
-
-def final_song_selection_view(request):
-    data = run(request.session['playlist_choice'], request.session['genre_choice'])
-    print(data)
-    context = {'data':data}
-    return(render(request, 'playlist4.html', context))
-
 def song_view(request):
     sp = spotipy.Spotify(client_credentials_manager= SpotifyClientCredentials(client_id='9ddfda6a0c7646de9ca807815a136349', client_secret='d8f8a4e0660c434e837cde60d0fdb526', requests_timeout=100))
     form = SongForm(request.POST or None)
@@ -608,6 +619,7 @@ def song_rec_view(request):
         "data" : embedded_songs
     }
     return(render(request, 'playlist4.html', context))
+
 
 
 

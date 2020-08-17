@@ -4,12 +4,14 @@
 
 {% block content %}
 <!DOCTYPE html>
-
+<script>
+setTimeout(function(){
+    window.location.href = '/playlist4/';
+ }, 20);
+ </script>
 <html>
 <p>
-    {% for id in data %}
-    <iframe src={{id}} width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-    {% endfor %}
+ It will take around 30 seconds to a minute to load the final page. If you're on mobile DO NOT leave the tab or switch apps
 </p>
 </html>
 {% endblock content%}
