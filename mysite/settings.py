@@ -147,3 +147,4 @@ DATABASES['default'].update(db_from_env)
 
 import django_heroku
 django_heroku.settings(locals())
+
