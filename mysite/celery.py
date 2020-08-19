@@ -25,7 +25,7 @@ app.conf.update(
     worker_pool='gevent',
 )
 # Load task modules from all registered Django app configs.
-app.autodiscover_tasks()
+app.autodiscover_tasks('packages')
 
 
 @app.task(bind=True)
