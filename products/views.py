@@ -128,7 +128,7 @@ def asian_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = AsianGenreForm()
     context = {
@@ -140,7 +140,7 @@ def country_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = CountryGenreForm()
     context = {
@@ -152,7 +152,7 @@ def dance_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = GenreForm()
     context = {
@@ -164,7 +164,7 @@ def electronic_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = ElectronicGenreForm()
     context = {
@@ -176,7 +176,7 @@ def happy_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = HappyGenreForm()
     context = {
@@ -188,7 +188,7 @@ def house_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = HouseGenreForm()
     context = {
@@ -200,7 +200,7 @@ def indie_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = IndieGenreForm()
     context = {
@@ -212,7 +212,7 @@ def instrumental_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = InstrumentalGenreForm()
     context = {
@@ -224,7 +224,7 @@ def pop_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = PopGenreForm()
     context = {
@@ -236,7 +236,7 @@ def rap_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = RapGenreForm()
     context = {
@@ -248,7 +248,7 @@ def rock_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = RockGenreForm()
     context = {
@@ -260,7 +260,7 @@ def slow_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = SlowGenreForm()
     context = {
@@ -272,7 +272,7 @@ def soundtrack_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = SoundtrackGenreForm()
     context = {
@@ -284,7 +284,7 @@ def south_american_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = SouthAmericanGenreForm()
     context = {
@@ -296,7 +296,7 @@ def world_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5: 
             form = WorldGenreForm()
     context = {
@@ -308,7 +308,7 @@ def misc_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = MiscGenreForm()
     context = {
@@ -326,7 +326,7 @@ def song_afro_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = SongAfroGenreForm()
     context = {
@@ -338,7 +338,7 @@ def song_asian_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = SongAsianGenreForm()
     context = {
@@ -350,7 +350,7 @@ def song_country_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = SongCountryGenreForm()
     context = {
@@ -362,7 +362,7 @@ def song_dance_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = SongGenreForm()
     context = {
@@ -374,7 +374,7 @@ def song_electronic_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = SongElectronicGenreForm()
     context = {
@@ -386,7 +386,7 @@ def song_happy_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = SongHappyGenreForm()
     context = {
@@ -398,7 +398,7 @@ def song_house_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = SongHouseGenreForm()
     context = {
@@ -410,7 +410,7 @@ def song_indie_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = SongIndieGenreForm()
     context = {
@@ -422,7 +422,7 @@ def song_instrumental_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = SongInstrumentalGenreForm()
     context = {
@@ -434,7 +434,7 @@ def song_pop_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = SongPopGenreForm()
     context = {
@@ -446,7 +446,7 @@ def song_rap_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = SongRapGenreForm()
     context = {
@@ -458,7 +458,7 @@ def song_rock_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = SongRockGenreForm()
     context = {
@@ -470,7 +470,7 @@ def song_slow_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = SongSlowGenreForm()
     context = {
@@ -482,7 +482,7 @@ def song_soundtrack_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = SongSoundtrackGenreForm()
     context = {
@@ -494,7 +494,7 @@ def song_south_american_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = SongSouthAmericanGenreForm()
     context = {
@@ -506,7 +506,7 @@ def song_world_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5: 
             form = SongWorldGenreForm()
     context = {
@@ -518,7 +518,7 @@ def song_misc_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
-        return redirect('/playlist4/')
+        return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = SongMiscGenreForm()
     context = {
@@ -618,7 +618,7 @@ def song_rec_view(request):
     context = {
         "data" : embedded_songs
     }
-    return(render(request, 'playlist4.html', context))
+    return(render(request, 'song4.html', context))
 
 
 
