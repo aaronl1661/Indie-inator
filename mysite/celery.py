@@ -22,6 +22,7 @@ app.conf.update(
     accept_content=['json'],  # Ignore other content
     result_serializer='json',
     result_backend='django-db',
+    worker_pool='gevent',
 )
 # Load task modules from all registered Django app configs.
 app.autodiscover_tasks()
