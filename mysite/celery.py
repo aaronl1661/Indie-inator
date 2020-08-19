@@ -24,7 +24,7 @@ app.conf.update(
     result_backend='django-db',
 )
 # Load task modules from all registered Django app configs.
-app.autodiscover_tasks('packages')
+app.autodiscover_tasks()
 
 
 @app.task(bind=True)
