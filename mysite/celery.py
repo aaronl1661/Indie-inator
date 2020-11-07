@@ -17,7 +17,7 @@ app = Celery('mysite')
 
 
 app.conf.update(
-    broker_url = 'redis://h:p5724480c90c96c86c0863933d4b8fee1adf95eedcf45ae93845742edfeb196f3@ec2-54-242-155-141.compute-1.amazonaws.com:23559',
+    broker_url = 'redis://h:p5724480c90c96c86c0863933d4b8fee1adf95eedcf45ae93845742edfeb196f3@ec2-52-0-30-231.compute-1.amazonaws.com:11629',
     task_serializer='json',
     accept_content=['json'],  # Ignore other content
     result_serializer='json',

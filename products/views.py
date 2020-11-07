@@ -97,10 +97,14 @@ def genre_view(request):
     return render(request, "playlist3.html", context)
 
 def waiting_view(request):
+    print('entered waiting view')
     playlist = request.session['playlist_choice']
     genre = request.session['genre_choice']
+    print('playlist genre recieved')
     async_result = run.delay(playlist, genre)
+    print('async created')
     request.session['task_id'] = async_result.task_id
+    print('request session recieved')
     #return redirect('/playlist4/')
     return render(request, 'playlistwaiting.html')
 
@@ -116,6 +120,7 @@ def afro_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
+        print(data)
         return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = AfroGenreForm()
@@ -176,6 +181,7 @@ def happy_genre_view(request):
     if request.POST and len(request.POST.getlist('genre')) <= 5 and len(request.POST.getlist('genre')) != 0:
         data = request.POST.getlist('genre')
         request.session['genre_choice'] = data
+        print(data)
         return redirect('/waitingp/')
     elif request.POST and len(request.POST.getlist('genre')) > 5:
         form = HappyGenreForm()

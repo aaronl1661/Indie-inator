@@ -214,6 +214,7 @@ def get_final_songs(sp, df, result, final_genres): # result comes form get_centr
                 return recommended_id
 @shared_task(bind=True)
 def run(self, playlist_id, final_genres):
+        print('entered')
         sp = init_sp()
         print("sp created")
         df = create_playlist_df(playlist_id)
